@@ -1,0 +1,30 @@
+﻿<dx:DXWindow xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    x:Class="DXSample.MainWindow" 
+    Title="MainWindow" 
+    Height="350" 
+    Width="525">
+    <Grid>
+        <dxpdf:PdfViewerControl Name="Viewer">
+            <dxpdf:PdfViewerControl.CommandProvider>
+                <dxpdf:PdfCommandProvider>
+                    <dxpdf:PdfCommandProvider.Actions>
+                        <dxb:RemoveBarItemAndLinkAction ItemName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Open}"/>
+                        <dxb:CollectionAction Kind="Insert" ContainerName="rgFile">
+                            <dxb:CollectionAction.Element>
+                                <dxb:BarButtonItem Content="bCustomItem" ItemClick="bCustomItem_ItemClick"/>
+                            </dxb:CollectionAction.Element>
+                        </dxb:CollectionAction>
+                    </dxpdf:PdfCommandProvider.Actions>
+                    <dxpdf:PdfCommandProvider.RibbonActions>
+                        <dxr:RemoveRibbonPageGroupAction PageName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.MainRibbonPage}" GroupName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.ZoomRibbonGroup}"/>
+                    </dxpdf:PdfCommandProvider.RibbonActions>
+                </dxpdf:PdfCommandProvider>
+            </dxpdf:PdfViewerControl.CommandProvider>
+        </dxpdf:PdfViewerControl>
+    </Grid>
+</dx:DXWindow>
