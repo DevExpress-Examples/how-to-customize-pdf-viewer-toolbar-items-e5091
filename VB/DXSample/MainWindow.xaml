@@ -1,0 +1,93 @@
+﻿<dx:DXWindow 
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"  
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  
+    xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:pdfViewer="http://schemas.devexpress.com/winfx/2008/xaml/pdf" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+    xmlns:local="clr-namespace:DXSample"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="DXSample.MainWindow" 
+    Title="MainWindow" 
+    Height="350" 
+    Width="525">
+    <Grid>
+        <Grid.Resources>
+            <sys:Boolean x:Key="TrueBoolean">True</sys:Boolean>
+        </Grid.Resources>
+        <pdfViewer:PdfViewerControl Name="Viewer">
+            <pdfViewer:PdfViewerControl.RibbonTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <dxb:BarManager x:Name="PART_PdfBarManager">
+                            <dxb:BarManager.Items>
+                                <pdfViewer:OpenDocumentBarItem Name="bOpen" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.OpenDocumentCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:CloseDocumentBarItem Name="bClose" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.CloseDocumentCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:FindTextBarItem Name="bFind" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.ShowFindTextCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="{StaticResource TrueBoolean}"/>
+                                <pdfViewer:PrintDocumentBarItem Name="bPrint" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.PrintDocumentCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:PreviousPageBarItem Name="bPreviousPage" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.PreviousPageCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:NextPageBarItem Name="bNextPage" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.NextPageCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:PaginationBarItem Name="bPagination" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.PaginationCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:ZoomInBarItem Name="bZoomIn" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.ZoomInCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:ZoomOutBarItem Name="bZoomOut" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.ZoomOutCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:ZoomBarItem Name="bZoom" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.ZoomCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <pdfViewer:PropertiesBarItem Name="bProperties" Command="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualCommandProvider.ShowPropertiesCommand, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                
+                                <dxb:BarButtonItem 
+                                    Name="bCustomItem" 
+                                    Content="Hello world!" 
+                                    Glyph="pack://application:,,,/DevExpress.Images.v13.2;component/Images/Actions/New_16x16.png" 
+                                    LargeGlyph="pack://application:,,,/DevExpress.Images.v13.2;component/Images/Actions/New_32x32.png" 
+                                    ItemClick="bCustomItem_ItemClick"/>
+                                
+                            </dxb:BarManager.Items>
+                            <DockPanel>
+                                <dxr:RibbonControl DockPanel.Dock="Top" RibbonStyle="Office2010" RibbonTitleBarVisibility="Collapsed" ToolbarShowMode="Hide">
+                                    <dxr:RibbonDefaultPageCategory>
+                                        <dxr:RibbonPage Caption="{pdfViewer:PdfViewerControlLocalizedString BarCaption}">
+                                            <dxr:RibbonPageGroup >
+                                                <dxb:BarItemLink BarItemName="bOpen"/>
+                                                <dxb:BarItemLink BarItemName="bClose"/>
+                                                <dxb:BarItemLink BarItemName="bPrint"/>
+                                            </dxr:RibbonPageGroup>
+                                            <dxr:RibbonPageGroup Caption="{pdfViewer:PdfViewerControlLocalizedString NavigationRibbonGroupCaption}">
+                                                <dxb:BarItemLink BarItemName="bPreviousPage"/>
+                                                <dxb:BarItemLink BarItemName="bNextPage"/>
+                                                <dxb:BarItemLink BarItemName="bFind"/>
+                                            </dxr:RibbonPageGroup>
+                                            <dxr:RibbonPageGroup Caption="{pdfViewer:PdfViewerControlLocalizedString ZoomRibbonGroupCaption}">
+                                                <dxb:BarItemLink BarItemName="bZoomOut"/>
+                                                <dxb:BarItemLink BarItemName="bZoomIn"/>
+                                                <dxb:BarItemLink BarItemName="bZoom"/>
+                                            </dxr:RibbonPageGroup>
+                                            <dxr:RibbonPageGroup Caption="Custom Elements">
+                                                <dxb:BarItemLink BarItemName="bCustomItem"/>
+                                            </dxr:RibbonPageGroup>
+                                        </dxr:RibbonPage>
+                                    </dxr:RibbonDefaultPageCategory>
+                                </dxr:RibbonControl>
+                                <pdfViewer:PdfPresenterControl 
+                                    BehaviorProvider="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).ActualBehaviorProvider, RelativeSource={RelativeSource Self}}" 
+                                    Document="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).Document, RelativeSource={RelativeSource Self}}" 
+                                    CurrentPageNumber="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).CurrentPageNumber, Mode=TwoWay, RelativeSource={RelativeSource Self}}" 
+                                    AllowCachePages="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).AllowCachePages, RelativeSource={RelativeSource Self}}" 
+                                    CacheSize="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).CacheSize, RelativeSource={RelativeSource Self}}" 
+                                    IsSearchControlVisible="{Binding Path=(pdfViewer:PdfViewerControl.ActualViewer).IsSearchControlVisible, Mode=OneWay, RelativeSource={RelativeSource Self}}">
+                                    <dxb:BarManager.DXContextMenu>
+                                        <dxb:PopupMenu>
+                                            <dxb:BarButtonItemLink BarItemName="bPrint"/>
+                                            <dxb:BarButtonItemLink BarItemName="bProperties"/>
+                                        </dxb:PopupMenu>
+                                    </dxb:BarManager.DXContextMenu>
+                                </pdfViewer:PdfPresenterControl>
+                            </DockPanel>
+                        </dxb:BarManager>
+                    </Grid>
+                </DataTemplate>
+            </pdfViewer:PdfViewerControl.RibbonTemplate>
+        </pdfViewer:PdfViewerControl>
+    </Grid>
+</dx:DXWindow>
