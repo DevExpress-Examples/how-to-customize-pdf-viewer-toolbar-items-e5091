@@ -1,0 +1,30 @@
+﻿<Window x:Class="PdfViewerCustomization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/documentviewer"
+        xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <dxpdf:PdfViewerControl x:Name="viewer" CommandBarStyle="Ribbon">
+        <dxpdf:PdfViewerControl.CommandProvider>
+            <dxpdf:PdfCommandProvider>
+                <dxpdf:PdfCommandProvider.RibbonActions>
+                    <dxb:RemoveAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.SaveAs}"/>
+                    <dxb:ReplaceAction  ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Close}">
+                        <dxb:BarButtonItem Content="Exit" LargeGlyph="{dx:DXImage Image=Close_32x32.png}"
+                                           Command="{Binding ElementName=viewer, Path=CloseDocumentCommand}"/>
+                    </dxb:ReplaceAction>
+                    <dxb:InsertAction Index="1" ContainerName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.FileRibbonGroup}">
+                        <dxb:BarButtonItem Content="Save" LargeGlyph="{dx:DXImage Image=SaveAs_32x32.png}"
+                                           Command="{Binding ElementName=viewer, Path=SaveAsCommand}"/>
+                    </dxb:InsertAction>
+                    <dxb:RemoveAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.ZoomRibbonGroup}"/>
+                </dxpdf:PdfCommandProvider.RibbonActions>
+            </dxpdf:PdfCommandProvider>
+        </dxpdf:PdfViewerControl.CommandProvider>
+    </dxpdf:PdfViewerControl>
+</Window>
