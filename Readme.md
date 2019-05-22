@@ -10,4 +10,6 @@
 
 <br/>
 
+Refer to the [How to: Customize the PDF Viewer's Integrated Bar command UI](https://github.com/DevExpress-Examples/how-to-customize-pdf-viewer-bar-manager) repository for an example on how to customize the integrated Bar command UI.
+
 
