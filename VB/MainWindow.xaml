@@ -20,10 +20,11 @@
                                            Command="{Binding ElementName=viewer, Path=CloseDocumentCommand}"/>
                     </dxb:ReplaceAction>
                     <dxb:InsertAction Index="1" ContainerName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.FileRibbonGroup}">
-                        <dxb:BarButtonItem Content="Save" LargeGlyph="{dx:DXImage Image=SaveAs_32x32.png}"
                         <dxb:BarButtonItem Content="Save" LargeGlyph="{dx:DXImageOffice2013 Image=SaveAs_32x32.png}"
                                            Command="{Binding ElementName=viewer, Path=SaveAsCommand}"/>
-                    </dxb:InsertAction>        
-				</dxpdf:PdfViewerControl.CommandProvider>
+                    </dxb:InsertAction>
+                </dxpdf:PdfCommandProvider.RibbonActions>
+            </dxpdf:PdfCommandProvider>
+        </dxpdf:PdfViewerControl.CommandProvider>
     </dxpdf:PdfViewerControl>
 </Window>
