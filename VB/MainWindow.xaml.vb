@@ -1,13 +1,12 @@
-﻿Imports System
-Imports System.Linq
 Imports System.Windows
 
 Namespace PdfViewerCustomization
-    Partial Public Class MainWindow
+
+    Public Partial Class MainWindow
         Inherits Window
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
     End Class
 End Namespace
