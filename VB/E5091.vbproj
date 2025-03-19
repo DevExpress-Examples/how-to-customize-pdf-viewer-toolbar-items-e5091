@@ -8,9 +8,16 @@
     <UseWindowsForms>False</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Demo.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="DevExpress.Images" Version="24.2.*" />
     <PackageReference Include="DevExpress.RichEdit.Export" Version="24.2.*" />
     <PackageReference Include="DevExpress.Wpf.Reporting" Version="24.2.*" />
     <PackageReference Include="DevExpress.Wpf.PdfViewer" Version="24.2.*" />
+	  <PackageReference Include="DevExpress.Wpf.Themes.Office2019Colorful" Version="24.2.*" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
