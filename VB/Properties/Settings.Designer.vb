@@ -12,7 +12,7 @@ Option Strict On
 Option Explicit On
 
 
-Namespace .Properties
+Namespace PdfViewerCustomization.Properties
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")>  _
