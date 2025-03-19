@@ -1,4 +1,4 @@
-Imports System.Windows
+Imports System.Linq
 
 Namespace PdfViewerCustomization
 
@@ -6,7 +6,7 @@ Namespace PdfViewerCustomization
         Inherits Window
 
         Public Sub New()
-            Me.InitializeComponent()
+            InitializeComponent()
         End Sub
     End Class
 End Namespace
