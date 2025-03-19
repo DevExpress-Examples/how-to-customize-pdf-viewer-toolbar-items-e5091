@@ -8,6 +8,8 @@
 
 This example uses the [bar actions](https://docs.devexpress.com/WPF/7045/controls-and-libraries/ribbon-bars-and-menu/bars/bar-actions) to customize the PDF Viewer's Ribbon. 
 
+![image](https://github.com/user-attachments/assets/1bbf8f77-bf5a-415b-b220-57ab33342def)
+
 <!-- default file list -->
 ## Files to Look At
 
