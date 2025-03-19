@@ -4,20 +4,20 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
+# WPF PDF Viewer - Customize the Integrated Ribbon
+
+This example uses the [bar actions](https://docs.devexpress.com/WPF/7045/controls-and-libraries/ribbon-bars-and-menu/bars/bar-actions) to customize the PDF Viewer's Ribbon. 
+
 <!-- default file list -->
-*Files to look at*:
+## Files to Look At
 
 * [MainWindow.xaml](./CS/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/MainWindow.xaml.vb))
 <!-- default file list end -->
-# How to customize the Integrated PDF Viewer Ribbon
 
-<p>The following example shows how to customize PDF Viewer Ribbon. Starting with version 14.1.5, this can be done using <a href="https://documentation.devexpress.com/#WPF/CustomDocument7045">actions</a>.<br>In previous versions, it is necessary to override the default PdfViewerControl's RibbonTemplate and add the required bar items to the newly defined RibbonControl.</p>
+## More Examples
 
-<br/>
-
-Refer to the [How to: Customize the PDF Viewer's Integrated Bar command UI](https://github.com/DevExpress-Examples/how-to-customize-pdf-viewer-bar-manager) repository for an example on how to customize the integrated Bar command UI.
-
+[WPF PDF Viewer - Customize the Integrated Bar's Commands](https://github.com/DevExpress-Examples/wpf-pdf-viewer-customize-bar-manager)
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
