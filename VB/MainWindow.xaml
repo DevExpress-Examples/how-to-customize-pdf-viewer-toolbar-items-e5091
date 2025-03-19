@@ -7,9 +7,9 @@
         xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf"
         xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
         Title="MainWindow"
-        Height="350"
-        Width="525">
-    <dxpdf:PdfViewerControl x:Name="viewer" CommandBarStyle="Ribbon">
+        Height="1050"
+        Width="650">
+    <dxpdf:PdfViewerControl x:Name="viewer" CommandBarStyle="Ribbon" DocumentSource="Demo.pdf">
         <dxpdf:PdfViewerControl.CommandProvider>
             <dxpdf:PdfCommandProvider>
                 <dxpdf:PdfCommandProvider.RibbonActions>
