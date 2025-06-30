@@ -17,23 +17,36 @@
         <dxpdf:PdfViewerControl.CommandProvider>
             <dxpdf:PdfCommandProvider>
                 <dxpdf:PdfCommandProvider.RibbonActions>
+                    <dxb:RemoveAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Close}"/>
+
                     <dxb:UpdateAction
                         ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Ribbon}"
                         PropertyName="ToolbarShowMode"
                         Value="Hide" />
                     <dxb:RemoveAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.SaveAs}" />
+                    
                     <dxb:ReplaceAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Close}">
                         <dxb:BarButtonItem
                             Command="{Binding ElementName=viewer, Path=CloseDocumentCommand}"
                             Content="Exit"
                             LargeGlyph="{dx:DXImageOffice2013 Image=Close_32x32.png}" />
                     </dxb:ReplaceAction>
+                    
                     <dxb:InsertAction ContainerName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.FileRibbonGroup}" Index="1">
                         <dxb:BarButtonItem
                             Command="{Binding ElementName=viewer, Path=SaveAsCommand}"
                             Content="Save"
                             LargeGlyph="{dx:DXImageOffice2013 Image=SaveAs_32x32.png}" />
                     </dxb:InsertAction>
+
+                    <dxb:InsertAction Index="2" ContainerName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.NavigationRibbonGroup}">
+                        <dxb:BarButtonItem Content="Close" 
+                            LargeGlyph="{dx:DXImage SvgImages/Outlook Inspired/Close.svg}"
+                            Command="{Binding ElementName=viewer, Path=CloseDocumentCommand}"/>
+                    </dxb:InsertAction>
+                    
+                    <dxb:UpdateAction ElementName="{x:Static dxpdf:DefaultPdfBarManagerItemNames.Ribbon}" PropertyName="ShowApplicationButton" Value="False"/>
+                    
                 </dxpdf:PdfCommandProvider.RibbonActions>
             </dxpdf:PdfCommandProvider>
         </dxpdf:PdfViewerControl.CommandProvider>
